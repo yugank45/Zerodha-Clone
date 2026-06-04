@@ -4,7 +4,7 @@ function Brokerage() {
   return ( 
     <div class="container my-5">
       <h3 className="fs-5 text-center " style={{ fontWeight: "500px" }}>
-        <a href="/brokerage-calculator " style={{ textDecoration: "none" }}>
+        <a href="https://zerodha.com/brokerage-calculator" style={{ textDecoration: "none" }}>
           Calculate your costs{" "}
         </a>
         upfront using our brokerage calculator

@@ -13,7 +13,7 @@ function OpenAccount() {
           <button
             className="btn btn-primary p-2 fs-5 mb-5"
             style={{ width: "20%", margin: "0 auto" }}
-          >
+           href="https://zerodha-clone-nwn2.onrender.com/auth/signup">
             Sign up now
           </button>
         </div>

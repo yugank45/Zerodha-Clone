@@ -39,8 +39,8 @@ function Stats() {
             style={{ width: "115%" }}
           />
           <div className = "text-center ">
-            <a href='' className='mx-5 mt-3' style={{textDecoration:"none"}} >Explore our products <i className="fa-solid fa-arrow-right-long"></i></a>
-            <a href='' className='mt-3' style={{textDecoration:"none"}}>Try Kite demo <i className="fa-solid fa-arrow-right-long"></i></a>
+            <a href='https://zerodha.com' className='mx-5 mt-3' style={{textDecoration:"none"}} >Explore our products <i className="fa-solid fa-arrow-right-long"></i></a>
+            <a href='https://kite.zerodha.com' className='mt-3' style={{textDecoration:"none"}}>Try Kite demo <i className="fa-solid fa-arrow-right-long"></i></a>
           </div>
         </div>
       </div>

@@ -86,7 +86,7 @@ function Footer() {
           <div className="col">
             <p style={{ fontWeight: "500", fontSize: "20px" }}>Support</p>
             <a
-              href=" "
+              href="https://zerodha.com/support"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -94,7 +94,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=" "
+              href="https://zerodha.com/support"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -102,7 +102,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=" "
+              href="https://zerodha.com/support"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -110,7 +110,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=" "
+              href="https://zerodha.com/support"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -118,7 +118,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=" "
+              href="https://zerodha.com/support"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -126,7 +126,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=" "
+              href="https://zerodha.com/support/circulars"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -134,7 +134,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=" "
+              href="https://zerodha.com/support/blogs"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -142,7 +142,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=" "
+              href="https://zerodha.com/support/downloads"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -153,7 +153,7 @@ function Footer() {
             <p style={{ fontWeight: "500", fontSize: "20px" }}>Account</p>
 
             <a
-              href=" "
+              href="https://zerodha.com/open-account"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -161,7 +161,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=" "
+              href="https://zerodha.com/minor-account"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -169,7 +169,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=" "
+              href="https://zerodha.com/nri-account"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -177,7 +177,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=" "
+              href="https://zerodha.com/huf-account"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -185,7 +185,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=" "
+              href="https://zerodha.com/commodity-account"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -193,7 +193,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=" "
+              href="https://zerodha.com/dematerialisation"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -201,7 +201,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=" "
+              href="https://zerodha.com/fund-transfer"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -209,7 +209,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=" "
+              href="https://zerodha.com/mtf"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
