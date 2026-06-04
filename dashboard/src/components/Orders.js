@@ -7,7 +7,7 @@ const Orders = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/allOrders", {
+      .get("https://zerodha-clone-nwn2.onrender.com/allOrders", {
         headers: {
           Authorization:
             localStorage.getItem("token"),

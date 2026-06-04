@@ -10,13 +10,13 @@ const Home = () => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        await axios.get("http://localhost:5000/auth/verify", {
+        await axios.get("https://zerodha-clone-nwn2.onrender.com/auth/verify", {
           withCredentials: true,
         });
 
         setAuthorized(true);
       } catch (err) {
-        window.location.href = "http://localhost:3000/login";
+        window.location.href = "https://zerodha-clone-nwn2.onrender.com/login";
       } finally {
         setLoading(false);
       }

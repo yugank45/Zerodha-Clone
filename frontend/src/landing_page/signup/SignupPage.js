@@ -4,7 +4,7 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Signup from "./Signup";
 
-function HomePage() {
+function SignupPage() {
   return (
     <>
       <Navbar />

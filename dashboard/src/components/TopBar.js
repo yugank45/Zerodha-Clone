@@ -10,7 +10,7 @@ const TopBar = () => {
   const [balance, setBalance] = useState(0);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/balance", {
+      .get("https://zerodha-clone-nwn2.onrender.com/balance", {
         withCredentials: true,
       })
       .then((res) => {

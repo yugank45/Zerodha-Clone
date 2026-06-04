@@ -21,7 +21,7 @@ const Login = () => {
 
   try {
     await axios.post(
-      "http://localhost:5000/auth/login",
+      "https://zerodha-clone-nwn2.onrender.com/auth/login",
       formData,
       {
         withCredentials: true,
@@ -30,7 +30,7 @@ const Login = () => {
 
     alert("Login Successful");
 
-    window.location.href = "http://localhost:3001";
+    window.location.href = "https://zerodha-clone-nwn2.onrender.com/";
   } catch (error) {
     alert(error.response?.data?.message || "Login Failed");
   }

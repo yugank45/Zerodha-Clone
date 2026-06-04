@@ -13,7 +13,7 @@ const SellActionWindow = ({ uid }) => {
 
   const handleSellClick = async () => {
     try {
-      await axios.post("http://localhost:5000/newOrder",
+      await axios.post("https://zerodha-clone-nwn2.onrender.com/newOrder",
         
         {
         name: uid,

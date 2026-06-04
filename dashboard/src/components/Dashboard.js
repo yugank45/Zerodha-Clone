@@ -18,7 +18,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchHoldings = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/allHoldings", {
+        const response = await axios.get("https://zerodha-clone-nwn2.onrender.com/allHoldings", {
           withCredentials: true,
         });
 

@@ -22,7 +22,7 @@ const WatchList = () => {
   // FETCH LIVE STOCKS
   useEffect(() => {
     axios
-      .get("http://localhost:5000/liveStocks")
+      .get("https://zerodha-clone-nwn2.onrender.com/liveStocks")
       .then((response) => {
         console.log(response.data);
 

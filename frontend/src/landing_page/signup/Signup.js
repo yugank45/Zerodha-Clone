@@ -22,7 +22,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/auth/signup", formData);
+      await axios.post("https://zerodha-clone-nwn2.onrender.com/auth/signup", formData);
       alert("Signup Successful");
       navigate("/login");
     } catch (error) {

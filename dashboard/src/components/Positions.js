@@ -7,7 +7,7 @@ const Positions = () => {
   // FETCH POSITIONS
   useEffect(() => {
     axios
-      .get("http://localhost:5000/allPositions", {
+      .get("https://zerodha-clone-nwn2.onrender.com/allPositions", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
