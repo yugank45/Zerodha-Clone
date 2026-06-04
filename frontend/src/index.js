@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // LANDING PAGES
 import HomePage from "./landing_page/home/HomePage";
@@ -26,7 +26,7 @@ import NotFound from "./landing_page/NotFound";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const token = localStorage.getItem("token");
+
 
 const AppLayout = () => {
   return (

@@ -19,7 +19,7 @@ function Footer() {
             <p style={{ fontWeight: "500", fontSize: "20px" }}>Company</p>
 
             <a
-              href=""
+              href="#"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -27,7 +27,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=""
+              href="#"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -35,7 +35,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=""
+              href="#"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -43,7 +43,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=""
+              href="#"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -51,7 +51,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=""
+              href="#"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -59,7 +59,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=""
+              href="#"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -67,7 +67,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=""
+              href="#"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -75,7 +75,7 @@ function Footer() {
             </a>
             <br />
             <a
-              href=""
+              href="#"
               className="text-muted"
               style={{ textDecoration: "none" }}
             >
@@ -310,7 +310,7 @@ function Footer() {
             style={{ fontSize: "16px" }}
           >
             <a
-              href=""
+              href="#"
               style={{ textDecoration: "none" }}
               className="text-muted"
             >
@@ -318,7 +318,7 @@ function Footer() {
             </a>{" "}
             &nbsp;&nbsp;
             <a
-              href=""
+              href="#"
               style={{ textDecoration: "none" }}
               className="text-muted"
             >
@@ -326,7 +326,7 @@ function Footer() {
             </a>{" "}
             &nbsp;&nbsp;
             <a
-              href=""
+              href="#"
               style={{ textDecoration: "none" }}
               className="text-muted"
             >
@@ -334,7 +334,7 @@ function Footer() {
             </a>{" "}
             &nbsp;&nbsp;
             <a
-              href=""
+              href="#"
               style={{ textDecoration: "none" }}
               className="text-muted"
             >
@@ -342,7 +342,7 @@ function Footer() {
             </a>{" "}
             &nbsp;&nbsp;
             <a
-              href=""
+              href="#"
               style={{ textDecoration: "none" }}
               className="text-muted"
             >
@@ -350,7 +350,7 @@ function Footer() {
             </a>{" "}
             &nbsp;&nbsp;{" "}
             <a
-              href=""
+              href="#"
               style={{ textDecoration: "none" }}
               className="text-muted"
             >
@@ -358,7 +358,7 @@ function Footer() {
             </a>{" "}
             &nbsp;&nbsp;
             <a
-              href=""
+              href="#"
               style={{ textDecoration: "none" }}
               className="text-muted"
             >
@@ -366,7 +366,7 @@ function Footer() {
             </a>{" "}
             &nbsp;&nbsp;{" "}
             <a
-              href=""
+              href="#"
               style={{ textDecoration: "none" }}
               className="text-muted"
             >
@@ -374,7 +374,7 @@ function Footer() {
             </a>{" "}
             &nbsp;&nbsp;
             <a
-              href=""
+              href="#"
               style={{ textDecoration: "none" }}
               className="text-muted"
             >
@@ -382,7 +382,7 @@ function Footer() {
             </a>{" "}
             &nbsp;&nbsp;{" "}
             <a
-              href=""
+              href="#"
               style={{ textDecoration: "none" }}
               className="text-muted"
             >
