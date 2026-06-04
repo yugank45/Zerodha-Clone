@@ -9,39 +9,39 @@ function CreateTicket() {
           <h4 className="my-4">
             <i class="fa-solid fa-circle-plus"></i>Account Opening
           </h4>
-          <a href="" style={{ textDecoration: "none", lineHeight: "2" }}>
+          <a href="https://zerodha.com/support/online-account-opening" style={{ textDecoration: "none", lineHeight: "2" }}>
             Online Account Opening
           </a>
           <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2" }}>
+          <a href="https://zerodha.com/support/offline-account-opening" style={{ textDecoration: "none", lineHeight: "2" }}>
             Offline Account Opening
           </a>
           <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2" }}>
+          <a href="https://zerodha.com/support/account-opening" style={{ textDecoration: "none", lineHeight: "2" }}>
             Opening
           </a>{" "}
           <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2" }}>
+          <a href="https://zerodha.com/support/resident-individual" style={{ textDecoration: "none", lineHeight: "2" }}>
             Resident individual
           </a>
           <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2" }}>
+          <a href="https://zerodha.com/support/minor" style={{ textDecoration: "none", lineHeight: "2" }}>
             Minor
           </a>
           <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2" }}>
+          <a href="https://zerodha.com/support/non-resident-indian-nri" style={{ textDecoration: "none", lineHeight: "2" }}>
             Non Resident Indian (NRI)
           </a>
           <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2" }}>
+          <a href="https://zerodha.com/support/company-partnership-huf-and-llp" style={{ textDecoration: "none", lineHeight: "2" }}>
             Company, Partnership, HUF and LLP
           </a>
           <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2" }}>
+          <a href="https://zerodha.com/support/glossary" style={{ textDecoration: "none", lineHeight: "2" }}>
             Glossary
           </a>
           <br />
-          <a href="" style={{ textDecoration: "none", lineHeight: "2" }}>
+          <a href="https://zerodha.com/support/getting-started" style={{ textDecoration: "none", lineHeight: "2" }}>
             Getting Started
           </a>
           <br />

@@ -17,17 +17,17 @@ function Hero() {
             className="form-control mt-4 mb-4"
             placeholder="Eg. how do i activate F&O segment?"
           />
-          <a href="" style={{ marginRight: "10px" }}>
+          <a href="https://zerodha.com/support/track-account-opening" style={{ marginRight: "10px" }}>
             Track account opening
           </a>
-          <a href="" style={{ marginRight: "10px" }}>
+          <a href="https://zerodha.com/support/track-segment-activation" style={{ marginRight: "10px" }}>
             Track segment activation
           </a>
-          <a href="" style={{ marginRight: "10px" }}>
+          <a href="https://zerodha.com/support/intraday-margins" style={{ marginRight: "10px" }}>
             Intraday margins
           </a>
           <br />
-          <a href="" style={{ marginRight: "10px" }}>
+          <a href="https://zerodha.com/support/kite-user-manual" style={{ marginRight: "10px" }}>
             Kite user manual
           </a>
         </div>
@@ -35,10 +35,10 @@ function Hero() {
           <h1 className="fs-3">Featured</h1>
           <ol>
             <li className="mb-2">
-              <a href="">Current Takeovers and Delisting - January 2024 </a>
+              <a href="https://zerodha.com/support/current-takeovers-and-delisting-january-2024">Current Takeovers and Delisting - January 2024 </a>
             </li>
             <li>
-              <a href="">Latest Intraday leverages - MIS & CO</a>
+              <a href="https://zerodha.com/support/latest-intraday-leveraged-mis-co">Latest Intraday leverages - MIS & CO</a>
             </li>
           </ol>
         </div>
