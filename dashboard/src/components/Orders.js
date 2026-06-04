@@ -3,29 +3,59 @@ import axios from "axios";
 
 const Orders = () => {
   const [allOrders, setAllOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get("http://localhost:5000/allOrders", {
         headers: {
-          Authorization: localStorage.getItem("token"),
+          Authorization:
+            localStorage.getItem("token"),
         },
       })
+
       .then((response) => {
+        console.log(
+          "Orders:",
+          response.data
+        );
+
         setAllOrders(response.data);
+
+        setLoading(false);
       })
+
       .catch((error) => {
-        console.error("Error fetching orders:", error);
+        console.error(
+          "Error fetching orders:",
+          error
+        );
+
+        setLoading(false);
       });
   }, []);
 
+  // LOADING
+  if (loading) {
+    return (
+      <h3 className="title">
+        Loading Orders...
+      </h3>
+    );
+  }
+
   return (
     <div className="orders">
-      <h3 className="title">Orders ({allOrders.length})</h3>
+      <h3 className="title">
+        Orders ({allOrders.length})
+      </h3>
 
       {allOrders.length === 0 ? (
         <div className="no-orders">
-          <p>You haven't placed any orders today</p>
+          <p>
+            You haven't placed any
+            orders today
+          </p>
         </div>
       ) : (
         <div className="order-table">
@@ -40,21 +70,38 @@ const Orders = () => {
             </thead>
 
             <tbody>
-              {allOrders.map((order, index) => (
-                <tr key={index}>
-                  <td>{order.name}</td>
-                  <td>{order.qty}</td>
-                  <td>{order.price}</td>
+              {allOrders.map(
+                (order, index) => (
+                  <tr key={index}>
+                    <td>
+                      {order.name ||
+                        "N/A"}
+                    </td>
 
-                  <td
-                    className={
-                      order.mode === "BUY" ? "profit" : "loss"
-                    }
-                  >
-                    {order.mode}
-                  </td>
-                </tr>
-              ))}
+                    <td>
+                      {order.qty || 0}
+                    </td>
+
+                    <td>
+                      ₹
+                      {(
+                        order.price || 0
+                      ).toFixed(2)}
+                    </td>
+
+                    <td
+                      className={
+                        order.mode ===
+                        "BUY"
+                          ? "profit"
+                          : "loss"
+                      }
+                    >
+                      {order.mode}
+                    </td>
+                  </tr>
+                )
+              )}
             </tbody>
           </table>
         </div>

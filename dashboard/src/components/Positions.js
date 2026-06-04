@@ -4,45 +4,47 @@ import axios from "axios";
 const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
 
+  // FETCH POSITIONS
   useEffect(() => {
-
-  axios
-    .get(
-      "http://localhost:5000/allPositions",
-      {
+    axios
+      .get("http://localhost:5000/allPositions", {
         headers: {
-          Authorization:
-            localStorage.getItem("token"),
+          Authorization: localStorage.getItem("token"),
         },
-      }
-    )
+      })
 
-    .then((response) => {
-      setAllPositions(response.data);
-    })
+      .then((response) => {
+        console.log("Positions:", response.data);
 
-    .catch((error) => {
-      console.error(
-        "Error fetching positions:",
-        error
-      );
-    });
+        setAllPositions(response.data);
+      })
 
-}, []);
+      .catch((error) => {
+        console.error(
+          "Error fetching positions:",
+          error
+        );
+      });
+  }, []);
 
-  // Total Calculations
+  // TOTAL INVESTMENT
   const totalInvestment = allPositions.reduce(
-    (acc, stock) => acc + stock.avg * stock.qty,
+    (acc, stock) =>
+      acc + (stock.avg || 0) * (stock.qty || 0),
     0
   );
 
+  // CURRENT VALUE
   const currentValue = allPositions.reduce(
-    (acc, stock) => acc + stock.price * stock.qty,
+    (acc, stock) =>
+      acc + (stock.price || 0) * (stock.qty || 0),
     0
   );
 
+  // TOTAL PNL
   const totalPnL = currentValue - totalInvestment;
 
+  // PNL %
   const pnlPercent =
     totalInvestment > 0
       ? ((totalPnL / totalInvestment) * 100).toFixed(2)
@@ -50,12 +52,10 @@ const Positions = () => {
 
   return (
     <>
-      {/* Title */}
       <h3 className="title">
         Positions ({allPositions.length})
       </h3>
 
-      {/* Table */}
       <div className="order-table">
         <table>
           <thead>
@@ -74,52 +74,75 @@ const Positions = () => {
           <tbody>
             {allPositions.map((stock, index) => {
               const investment =
-                stock.avg * stock.qty;
+                (stock.avg || 0) *
+                (stock.qty || 0);
 
               const currValue =
-                stock.price * stock.qty;
+                (stock.price || 0) *
+                (stock.qty || 0);
 
               const pnl =
                 currValue - investment;
 
               const isProfit = pnl >= 0;
 
-              const profClass = isProfit
-                ? "profit"
-                : "loss";
-
-              const dayClass = stock.isLoss
-                ? "loss"
-                : "profit";
-
               return (
                 <tr key={index}>
-                  <td>{stock.product}</td>
-
                   <td>
-                    <strong>{stock.name}</strong>
-                  </td>
-
-                  <td>{stock.qty}</td>
-
-                  <td>
-                    ₹{stock.avg.toFixed(2)}
+                    {stock.product || "CNC"}
                   </td>
 
                   <td>
-                    ₹{stock.price.toFixed(2)}
+                    <strong>
+                      {stock.name}
+                    </strong>
                   </td>
 
-                  <td className={profClass}>
+                  <td>{stock.qty || 0}</td>
+
+                  <td>
+                    ₹
+                    {(stock.avg || 0).toFixed(
+                      2
+                    )}
+                  </td>
+
+                  <td>
+                    ₹
+                    {(stock.price || 0).toFixed(
+                      2
+                    )}
+                  </td>
+
+                  <td
+                    className={
+                      isProfit
+                        ? "profit"
+                        : "loss"
+                    }
+                  >
                     ₹{currValue.toFixed(2)}
                   </td>
 
-                  <td className={profClass}>
+                  <td
+                    className={
+                      isProfit
+                        ? "profit"
+                        : "loss"
+                    }
+                  >
                     ₹{pnl.toFixed(2)}
                   </td>
 
-                  <td className={dayClass}>
-                    {stock.day}
+                  <td
+                    className={
+                      stock.day &&
+                      stock.day.includes("-")
+                        ? "loss"
+                        : "profit"
+                    }
+                  >
+                    {stock.day || "0%"}
                   </td>
                 </tr>
               );
@@ -128,12 +151,13 @@ const Positions = () => {
         </table>
       </div>
 
-      {/* Summary Cards */}
-      <div className="row">
+      {/* SUMMARY */}
 
+      <div className="row">
         <div className="col">
           <h5>
-            ₹{totalInvestment.toFixed(2)}
+            ₹
+            {totalInvestment.toFixed(2)}
           </h5>
 
           <p>Total Investment</p>
@@ -162,7 +186,6 @@ const Positions = () => {
 
           <p>Total P&L</p>
         </div>
-
       </div>
     </>
   );

@@ -28,9 +28,7 @@ const BuyActionWindow = ({ uid }) => {
         },
 
         {
-          headers: {
-            Authorization: localStorage.getItem("token"),
-          },
+          withCredentials: true,
         },
       );
 

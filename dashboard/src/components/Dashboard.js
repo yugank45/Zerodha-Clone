@@ -16,34 +16,41 @@ const Dashboard = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/allHoldings")
-      .then((response) => {
+    const fetchHoldings = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/allHoldings", {
+          withCredentials: true,
+        });
+
         setAllHoldings(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+      } catch (error) {
+        console.error("Error fetching holdings:", error);
+      }
+    };
+
+    fetchHoldings();
   }, []);
 
   return (
-    <div className="dashboard-container">
-      <GeneralContextProvider>
-        <WatchList />
-      </GeneralContextProvider>
+    <GeneralContextProvider>
+      <div className="dashboard-container">
+        <WatchList holdings={allHoldings} />
 
-      <div className="content">
-        <Routes>
-          <Route exact path="/" element={<Summary />} />
-
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/holdings" element={<Holdings />} />
-          <Route path="/positions" element={<Positions />} />
-          <Route path="/funds" element={<Funds />} />
-          <Route path="/apps" element={<Apps />} />
-        </Routes>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Summary />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route
+              path="/holdings"
+              element={<Holdings holdings={allHoldings} />}
+            />
+            <Route path="/positions" element={<Positions />} />
+            <Route path="/funds" element={<Funds />} />
+            <Route path="/apps" element={<Apps />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </GeneralContextProvider>
   );
 };
 

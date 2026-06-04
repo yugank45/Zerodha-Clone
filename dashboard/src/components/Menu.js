@@ -1,124 +1,199 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+
 import "./Menu.css";
 
 const Menu = () => {
-  const [selectedMenu, setSelectedMenu] = useState(0);
-  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  const location = useLocation();
 
-  const handleMenuClick = (index) => {
-    setSelectedMenu(index);
-  };
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] =
+    useState(false);
 
-  const handleProfileClick = (index) => {
-    setIsProfileDropdownOpen(!isProfileDropdownOpen);
-  };
+  // SAFE USER PARSE
+  const user =
+    JSON.parse(localStorage.getItem("user")) || {};
 
+  // LOGOUT
   const handleLogout = () => {
     localStorage.removeItem("token");
 
     localStorage.removeItem("user");
 
-    window.location.href = "http://localhost:3000/login";
+    window.location.href =
+      "http://localhost:3000/login";
   };
 
-  const menuClass = "menu";
-  const activeMenuClass = "menu-selected";
+  // MENU ACTIVE CLASS
+  const getMenuClass = (path) => {
+    return location.pathname === path
+      ? "menu-selected"
+      : "menu";
+  };
+
   return (
     <div className="menu-container">
-      <img src="logo.png" style={{ width: "50px" }} />
+
+      {/* LOGO */}
+
+      <img
+        src="logo.png"
+        alt="logo"
+        style={{ width: "50px" }}
+      />
+
       <div className="menus">
+
+        {/* MENU LINKS */}
+
         <ul>
+
           <li>
             <Link
-              style={{ textDecoration: "none" }}
               to="/"
-              onClick={() => handleMenuClick(0)}
+              style={{
+                textDecoration: "none",
+              }}
             >
-              <p className={selectedMenu === 0 ? activeMenuClass : menuClass}>
+              <p className={getMenuClass("/")}>
                 Dashboard
               </p>
             </Link>
           </li>
+
           <li>
             <Link
-              style={{ textDecoration: "none" }}
               to="/orders"
-              onClick={() => handleMenuClick(1)}
+              style={{
+                textDecoration: "none",
+              }}
             >
-              <p className={selectedMenu === 1 ? activeMenuClass : menuClass}>
+              <p
+                className={getMenuClass(
+                  "/orders"
+                )}
+              >
                 Orders
               </p>
             </Link>
           </li>
+
           <li>
             <Link
-              style={{ textDecoration: "none" }}
               to="/holdings"
-              onClick={() => handleMenuClick(2)}
+              style={{
+                textDecoration: "none",
+              }}
             >
-              <p className={selectedMenu === 2 ? activeMenuClass : menuClass}>
+              <p
+                className={getMenuClass(
+                  "/holdings"
+                )}
+              >
                 Holdings
               </p>
             </Link>
           </li>
+
           <li>
             <Link
-              style={{ textDecoration: "none" }}
               to="/positions"
-              onClick={() => handleMenuClick(3)}
+              style={{
+                textDecoration: "none",
+              }}
             >
-              <p className={selectedMenu === 3 ? activeMenuClass : menuClass}>
+              <p
+                className={getMenuClass(
+                  "/positions"
+                )}
+              >
                 Positions
               </p>
             </Link>
           </li>
+
           <li>
             <Link
-              style={{ textDecoration: "none" }}
               to="/funds"
-              onClick={() => handleMenuClick(4)}
+              style={{
+                textDecoration: "none",
+              }}
             >
-              <p className={selectedMenu === 4 ? activeMenuClass : menuClass}>
+              <p
+                className={getMenuClass(
+                  "/funds"
+                )}
+              >
                 Funds
               </p>
             </Link>
           </li>
+
           <li>
             <Link
-              style={{ textDecoration: "none" }}
               to="/apps"
-              onClick={() => handleMenuClick(5)}
+              style={{
+                textDecoration: "none",
+              }}
             >
-              <p className={selectedMenu === 5 ? activeMenuClass : menuClass}>
+              <p
+                className={getMenuClass(
+                  "/apps"
+                )}
+              >
                 Apps
               </p>
             </Link>
           </li>
+
         </ul>
+
         <hr />
 
+        {/* PROFILE SECTION */}
+
         <div className="profile-section">
-          <div className="profile" onClick={handleProfileClick}>
-            <div className="avatar">ZU</div>
+
+          <div
+            className="profile"
+            onClick={() =>
+              setIsProfileDropdownOpen(
+                !isProfileDropdownOpen
+              )
+            }
+          >
+            <div className="avatar">
+              {user?.username
+                ? user.username
+                    .substring(0, 2)
+                    .toUpperCase()
+                : "ZU"}
+            </div>
 
             <p className="username">
-              {JSON.parse(localStorage.getItem("user"))?.username || "USER"}
+              {user?.username || "USER"}
             </p>
           </div>
 
+          {/* DROPDOWN */}
+
           {isProfileDropdownOpen && (
             <div className="profile-dropdown">
+
               <p className="dropdown-item">
-                {JSON.parse(localStorage.getItem("user"))?.email}
+                {user?.email ||
+                  "No Email"}
               </p>
 
-              <button className="logout-btn" onClick={handleLogout}>
+              <button
+                className="logout-btn"
+                onClick={handleLogout}
+              >
                 Logout
               </button>
+
             </div>
           )}
+
         </div>
       </div>
     </div>
