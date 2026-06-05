@@ -56,26 +56,41 @@ app.get("/liveStocks", async (req, res) => {
       "INFY.NS",
       "HDFCBANK.NS",
       "SBIN.NS",
+      "AXISBANK.NS",
+      "KOTAKBANK.NS",
+      "BHARTIARTL.NS",
+      "ASIANPAINT.NS",
+      "MARUTI.NS",
     ];
 
     const stockData = await Promise.all(
       symbols.map(async (symbol) => {
-        const result = await yahooFinance.quote(symbol);
+        try {
+          const result = await yahooFinance.quote(symbol);
 
-        return {
-          name: symbol.replace(".NS", ""),
-          price: result.regularMarketPrice,
-          change: result.regularMarketChangePercent,
-        };
+          return {
+            name: symbol.replace(".NS", ""),
+            price: result.regularMarketPrice || 0,
+            change: result.regularMarketChangePercent || 0,
+          };
+        } catch (err) {
+          console.error(`Failed for ${symbol}:`, err.message);
+
+          return {
+            name: symbol.replace(".NS", ""),
+            price: 0,
+            change: 0,
+          };
+        }
       }),
     );
 
-    res.json(stockData);
+    res.status(200).json(stockData);
   } catch (error) {
-    console.error(error);
+    console.error("LIVE STOCK ERROR:", error);
 
     res.status(500).json({
-      message: "Error fetching live stocks",
+      message: error.message,
     });
   }
 });
