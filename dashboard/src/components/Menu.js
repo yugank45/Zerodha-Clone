@@ -20,7 +20,7 @@ const Menu = () => {
     localStorage.removeItem("user");
 
     window.location.href =
-      "https://zerodha-omega-mocha.vercel.app/login";
+      "https://zerodha-clone-nine-phi.vercel.app/login";
   };
 
   // MENU ACTIVE CLASS
