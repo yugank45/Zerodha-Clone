@@ -48,51 +48,66 @@ const uri = process.env.MONGO_URL;
 // ================= LIVE STOCK API =====================
 // ======================================================
 
-app.get("/liveStocks", async (req, res) => {
-  try {
-    const symbols = [
-      "RELIANCE.NS",
-      "TCS.NS",
-      "INFY.NS",
-      "HDFCBANK.NS",
-      "SBIN.NS",
-      "AXISBANK.NS",
-      "KOTAKBANK.NS",
-      "BHARTIARTL.NS",
-      "ASIANPAINT.NS",
-      "MARUTI.NS"
-    ];
+// app.get("/liveStocks", async (req, res) => {
+//   try {
+//     const symbols = [
+//       "RELIANCE.NS",
+//       "TCS.NS",
+//       "INFY.NS",
+//       "HDFCBANK.NS",
+//       "SBIN.NS",
+//       "AXISBANK.NS",
+//       "KOTAKBANK.NS",
+//       "BHARTIARTL.NS",
+//       "ASIANPAINT.NS",
+//       "MARUTI.NS"
+//     ];
 
-    const stockData = await Promise.all(
-      symbols.map(async (symbol) => {
-        try {
-          const result = await yahooFinance.quote(symbol);
+//     const stockData = await Promise.all(
+//       symbols.map(async (symbol) => {
+//         try {
+//           const result = await yahooFinance.quote(symbol);
 
-          return {
-            name: symbol.replace(".NS", ""),
-            price: result.regularMarketPrice || 0,
-            change: result.regularMarketChangePercent || 0,
-          };
-        } catch (err) {
-          console.error(`Failed for ${symbol}:`, err.message);
+//           return {
+//             name: symbol.replace(".NS", ""),
+//             price: result.regularMarketPrice || 0,
+//             change: result.regularMarketChangePercent || 0,
+//           };
+//         } catch (err) {
+//           console.error(`Failed for ${symbol}:`, err.message);
 
-          return {
-            name: symbol.replace(".NS", ""),
-            price: 0,
-            change: 0,
-          };
-        }
-      }),
-    );
+//           return {
+//             name: symbol.replace(".NS", ""),
+//             price: 0,
+//             change: 0,
+//           };
+//         }
+//       }),
+//     );
 
-    res.status(200).json(stockData);
-  } catch (error) {
-    console.error("LIVE STOCK ERROR:", error);
+//     res.status(200).json(stockData);
+//   } catch (error) {
+//     console.error("LIVE STOCK ERROR:", error);
 
-    res.status(500).json({
-      message: error.message,
-    });
-  }
+//     res.status(500).json({
+//       message: error.message,
+//     });
+//   }
+// });
+
+app.get("/liveStocks", (req, res) => {
+  res.status(200).json([
+    { name: "RELIANCE", price: 1450, change: 1.2 },
+    { name: "TCS", price: 3800, change: -0.5 },
+    { name: "INFY", price: 1620, change: 0.8 },
+    { name: "HDFCBANK", price: 1700, change: 0.4 },
+    { name: "SBIN", price: 820, change: -0.2 },
+    { name: "ICICIBANK", price: 1250, change: 0.9 },
+    { name: "ITC", price: 440, change: 0.3 },
+    { name: "LT", price: 3650, change: 1.1 },
+    { name: "AXISBANK", price: 1180, change: -0.4 },
+    { name: "BHARTIARTL", price: 1850, change: 0.7 },
+  ]);
 });
 
 mongoose
