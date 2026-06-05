@@ -9,18 +9,22 @@ const cors = require("cors");
 const { OrdersModel } = require("./model/OrdersModel");
 const authRoutes = require("./routes/authRoutes");
 const authMiddleware = require("./middleware/authMiddleware");
-const cookieParser = require('cookie-parser');
+const cookieParser = require("cookie-parser");
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001"], // Replace with your actual ports
-  credentials: true 
-}));
+app.use(
+  cors({
+    origin: [
+      "https://zerodha-omega-mocha.vercel.app",
+      "https://dashboard-delta-six-81.vercel.app",
+    ], // Replace with your actual ports
+    credentials: true,
+  }),
+);
 app.use(cookieParser());
 app.use(express.json());
 app.use("/auth", authRoutes);
-
 
 const PORT = process.env.PORT || 5000;
 const uri = process.env.MONGO_URL;
@@ -40,7 +44,7 @@ mongoose
 
 app.get("/allHoldings", authMiddleware, async (req, res) => {
   let allHoldings = await HoldingsModel.find({});
- res.status(200).json(allHoldings);
+  res.status(200).json(allHoldings);
 });
 
 app.get("/allPositions", authMiddleware, async (req, res) => {
