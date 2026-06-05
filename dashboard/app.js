@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 app.use(
   cors({
     origin: [
-      "https://zerodha-omega-mocha.vercel.app",
-      "https://dashboard-delta-six-81.vercel.app",
+      "https://zerodha-clone-nine-phi.vercel.app",
+      "https://zerodha-dashboard-theta-one.vercel.app",
     ], // Replace with your actual ports
     credentials: true,
   }),
