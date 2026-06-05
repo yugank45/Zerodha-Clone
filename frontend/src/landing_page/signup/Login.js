@@ -17,24 +17,24 @@ const Login = () => {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    await axios.post(
-      "https://zerodha-clone-nwn2.onrender.com/auth/login",
-      formData,
-      {
-        withCredentials: true,
-      }
-    );
+    try {
+      await axios.post(
+        "https://zerodha-clone-nwn2.onrender.com/auth/login",
+        formData,
+        {
+          withCredentials: true,
+        },
+      );
 
-    alert("Login Successful");
+      alert("Login Successful");
 
-    window.location.href = "https://dashboard-delta-six-81.vercel.app";
-  } catch (error) {
-    alert(error.response?.data?.message || "Login Failed");
-  }
-};
+      window.location.href = "https://dashboard-delta-six-81.vercel.app";
+    } catch (error) {
+      alert(error.response?.data?.message || "Login Failed");
+    }
+  };
 
   return (
     <div className="signup-page-wrapper">

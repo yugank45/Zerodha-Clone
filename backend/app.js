@@ -18,6 +18,7 @@ const authRoutes = require("./routes/authRoutes");
 const authMiddleware = require("./middleware/authMiddleware");
 
 const app = express();
+app.set("trust proxy", 1);
 
 // ================= MIDDLEWARE =================
 
