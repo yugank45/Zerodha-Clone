@@ -16,7 +16,7 @@ const Home = () => {
 
         setAuthorized(true);
       } catch (err) {
-        window.location.href = "https://zerodha-clone-nwn2.onrender.com/login";
+        window.location.href = "https://zerodha-omega-mocha.vercel.app/login";
       } finally {
         setLoading(false);
       }
