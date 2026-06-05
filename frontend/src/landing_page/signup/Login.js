@@ -30,7 +30,7 @@ const Login = () => {
 
     alert("Login Successful");
 
-    window.location.href = "https://zerodha-lzv5.vercel.app";
+    window.location.href = "https://dashboard-delta-six-81.vercel.app";
   } catch (error) {
     alert(error.response?.data?.message || "Login Failed");
   }

@@ -96,8 +96,8 @@ router.post("/login", async (req, res) => {
     // Set the cookie instead of sending the token in the JSON body
     res.cookie("token", token, {
       httpOnly: true, // Cannot be accessed by client-side JS
-      secure: false, // Set to true if deploying with HTTPS
-      sameSite: "lax", // Allows sharing across localhost ports
+      secure: true, // Set to true if deploying with HTTPS
+      sameSite: "none", // Allows sharing across localhost ports
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
 
@@ -119,8 +119,8 @@ router.post("/login", async (req, res) => {
 router.post("/logout", (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    sameSite: "lax",
-    secure: false, // Must match your cookie settings above
+    sameSite: "none",
+    secure: true, // Must match your cookie settings above
   });
   res.status(200).json({ message: "Logged out successfully" });
 });

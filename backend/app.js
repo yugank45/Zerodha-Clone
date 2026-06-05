@@ -9,8 +9,6 @@ const YahooFinance = require("yahoo-finance2").default;
 
 const yahooFinance = new YahooFinance();
 
-
-
 const { HoldingsModel } = require("./model/HoldingsModel");
 const { PositionsModel } = require("./model/PositionsModel");
 const { OrdersModel } = require("./model/OrdersModel");
@@ -25,7 +23,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
+    origin: [
+      "https://zerodha-omega-mocha.vercel.app",
+      "https://dashboard-delta-six-81.vercel.app",
+    ],
     credentials: true,
   }),
 );
