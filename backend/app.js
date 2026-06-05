@@ -60,7 +60,7 @@ app.get("/liveStocks", async (req, res) => {
       "KOTAKBANK.NS",
       "BHARTIARTL.NS",
       "ASIANPAINT.NS",
-      "MARUTI.NS",
+      "MARUTI.NS"
     ];
 
     const stockData = await Promise.all(
